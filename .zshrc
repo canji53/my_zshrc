@@ -1,24 +1,4 @@
 ########
-# enyenvの初期化
-########
-eval "$(anyenv init -)"
-
-
-########
-# phpenvのパスおよび初期化
-########
-export PATH="/Users/smiler/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-
-
-########
-# Dockerのパス
-########
-export DOCKER_CONTENT_TRUST=1
-export PATH="/usr/local/sbin:$PATH"
-
-
-########
 # gitのbranch名表示
 ########
 # git-promptの読み込み
@@ -34,3 +14,18 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 # プロンプトの表示設定(好きなようにカスタマイズ可)
 setopt PROMPT_SUBST ; PS1='%F{cyan}%~ %f% %F{red}$(__git_ps1 "git:(%s) ")%f% $ '
+
+#######
+# anyenvの設定
+#######
+eval "$(anyenv init -)"
+
+#######
+# postgresql15用の設定
+#######
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+######
+# mysql client用の設定
+######
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
